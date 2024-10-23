@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    background-color: #222;
+    padding: 20px;
+
+    li {
+        margin-right: 20px;
+        a {
+            color: #fff;
+        }
+    }
+}

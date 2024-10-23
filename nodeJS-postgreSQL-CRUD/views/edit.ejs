@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% title %></title>
+</head>
+<body>
+
+    <h1>Edit product</h1>
+    <%- include("partials/nav") %>
+
+    <form action="/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= product.name %>" placeholder="Enter product name" required>
+        </div>
+
+        <div>   
+            <label for="description">Description:</label>
+            <textarea name="description" placeholder="Enter product description" required>
+                <%= product.description %>
+            </textarea>
+        </div>
+
+        <div>
+            <label for="image">Image:</label>
+            <% if (product.image) { %>
+                <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" width="100">
+                <input type="hidden" name="oldImage" value="<%= product.image %>">
+            <% } %>
+            <input type="file" name="image">
+        </div>
+
+        <button type="submit">Create</button>
+    </form>
+    
+</body>
+</html>
